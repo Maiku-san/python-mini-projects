@@ -1,7 +1,7 @@
 import pygame
 import sys
-from button import Button
-from dice_roller import DiceRoller
+from ui_button import Button
+from dice_roller_logic import DiceRoller
 
 # Init Pygame
 pygame.init()
@@ -88,10 +88,27 @@ while running:
     if roller.roll_results:
         if isinstance(roller.roll_results[0], int):
             result_text = f"Results: {', '.join(map(str, roller.roll_results))}"
+
+            # Calculate width of result box based on the length of the result string
+            text_width, text_height = small_font.size(result_text)
+            result_box_width = max(100, text_width + 20) # min width 300, width based on text length
+            result_box_height = 50  # Fixed height for the result box
+
+            # Rectangle for results box
+            result_box_x = 50
+            result_box_y = 320
+            pygame.draw.rect(screen, (17, 17, 132), (result_box_x, result_box_y, result_box_width, result_box_height))  # Background
+            pygame.draw.rect(screen, (255, 255, 255), (result_box_x, result_box_y, result_box_width, result_box_height), 2)  # Border
+
+            # Display results inside the box
+            result_label = small_font.render(result_text, True, WHITE)
+            # Calculate vertical centering
+            result_text_y = result_box_y + (result_box_height - result_label.get_height()) // 2
+            screen.blit(result_label, (result_box_x + 10, result_text_y))  # Add padding inside the box
         else:
             result_text = roller.roll_results[0]
-        result_surface = small_font.render(result_text, True, WHITE)
-        screen.blit(result_surface, (50, 320))
+            result_label = small_font.render(result_text, True, WHITE)
+            screen.blit(result_label, (50, 320))
 
     pygame.display.flip()
 
