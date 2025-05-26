@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Cereal",
+    "ingredients": [
+      "Cereal",
+      "Milk"
+    ],
+    "instructions": "Mix cereal and milk inside a bowl. Bon appetit!",
+    "category": "Breakfast"
+  },
+  {
+    "title": "Banana Split",
+    "ingredients": [
+      "Banana",
+      "Ice Cream"
+    ],
+    "instructions": "Be creative, eat the banana with ice cream on top! ;)",
+    "category": "Dessert"
+  },
+  {
+    "title": "Amazing Stuff",
+    "ingredients": [
+      "Amazingness"
+    ],
+    "instructions": "A-maze-ing!!",
+    "category": "Dessert"
+  }
+]
