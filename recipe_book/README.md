@@ -26,11 +26,14 @@ Built as part of a Python refresh journey.
 
 ```bash
 recipe_book/
+├── data/
+│   └── recipes.json       # Data store (can be empty at first)
+├── tests/
+│   └── test_ui.py         # our test cases will go here
 ├── main.py                # Runs the CLI app
 ├── models.py              # Recipe, RecipeBook classes
-├── storage.py             # JSON saving/loading logic
-├── utils.py               # CLI helper functions
-├── requirements.txt       # For dependencies (optional)
+├── pytest.ini             # Tests config file
 ├── README.md              # Project overview
-└── data/
-    └── recipes.json       # Data store (can be empty at first)
+├── requirements.txt       # For dependencies (optional)
+├── storage.py             # JSON saving/loading logic
+└── utils.py               # CLI helper functions

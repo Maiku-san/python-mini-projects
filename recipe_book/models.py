@@ -1,5 +1,3 @@
-import json
-
 class Recipe:
     def __init__(self, title, ingredients, instructions, category=None):
         self.title = title
