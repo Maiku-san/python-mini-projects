@@ -8,12 +8,10 @@ Features:
 - Prevents duplicate entries
 - JSON-based data persistence
 
-### 🚧 Work In Progress
-This project is still in active development. Upcoming features may include:
-- Recipe search improvements
-- Editable recipe entries
-- Unit tests
-- UI/UX enhancements
+### 🚧✅ Mini Project Status
+This project was built as a Python practice exercise. It implements a basic recipe book with features like adding, listing, editing, deleting, and filtering recipes. While there are many possible improvements, the current version can serve as a foundation for future enhancements or refactoring.
+
+Feel free to explore!
 
 ### 💡 Tech Stack
 - Python 3
@@ -28,8 +26,9 @@ Built as part of a Python refresh journey.
 recipe_book/
 ├── data/
 │   └── recipes.json       # Data store (can be empty at first)
-├── tests/
-│   └── test_ui.py         # our test cases will go here
+├── tests/                 # Test cases will go here
+│   └── test_main.py       
+│   └── test_utils.py      
 ├── main.py                # Runs the CLI app
 ├── models.py              # Recipe, RecipeBook classes
 ├── pytest.ini             # Tests config file

@@ -18,11 +18,12 @@
     "category": "Dessert"
   },
   {
-    "title": "Amazing Stuff",
+    "title": "Test Recipe",
     "ingredients": [
-      "Amazingness"
+      "ingredient 1",
+      "ingredient 2"
     ],
-    "instructions": "A-maze-ing!!",
-    "category": "Dessert"
+    "instructions": "instructions",
+    "category": "Uncategorized"
   }
 ]

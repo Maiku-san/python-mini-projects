@@ -1,5 +1,6 @@
 import random
 from tabulate import tabulate
+from rich.table import Table
 from rich.console import Console
 from models import Recipe
 
@@ -103,6 +104,13 @@ def suggest_random(recipe_book):
         console.print("No recipes to suggest.")
         return
     r = random.choice(recipe_book.recipes)
-    table_str = tabulate([[r.title, r.ingredients, r.category, r.instructions]], headers=["Recipe Name", "Ingredients", "Category", "Instructions"], tablefmt="fancy_grid")
-    console.print("[bold cyan]Suggested Recipe:[/bold cyan]")
-    console.print(table_str)
+
+    table = Table(title="Suggested Recipe")
+    table.add_column("Recipe Name", style="bold")
+    table.add_column("Ingredients", style="green")
+    table.add_column("Category")
+    table.add_column("Instructions")
+
+    ingredients_str = ", ".join(r.ingredients)
+    table.add_row(r.title, ingredients_str, r.category, r.instructions)
+    console.print(table)

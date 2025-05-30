@@ -5,6 +5,11 @@ class Recipe:
         self.instructions = instructions  # String
         self.category = category or "Uncategorized"
 
+    def display(self):
+        print(f"{self.title} ({self.category})")
+        print("Ingredients:", ", ".join(self.ingredients))
+        print("Instructions:", self.instructions)
+
     def to_dict(self):
         return {
             "title": self.title,
@@ -21,6 +26,13 @@ class Recipe:
             instructions=data["instructions"],
             category=data.get("category", "Uncategorized")
         )
+
+# Just to try something with Inheritance and Method Overriding
+class VegetarianRecipe(Recipe):
+    def display(self):
+        super().display()
+        print("🌿 This is a vegetarian recipe.")
+
 
 class RecipeBook:
     def __init__(self):
